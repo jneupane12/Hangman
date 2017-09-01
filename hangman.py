@@ -18,9 +18,6 @@ def load_words():
 	"""
 	Returns a list of valid words. Words are strings 
 	of lowercase letters.
-	
-	Depending on the size of the word list, this function may
-	take a while to finish.
 	"""
 	time.sleep(2)
 	print("Loading word list from file...")
@@ -59,15 +56,13 @@ wordlist = load_words()
 
 def is_word_guessed(secret_word, letters_guessed):
 	'''
-	secret_word: string, the word the user is guessing;
-	 assumes all letters are
-	  lowercase
-	letters_guessed: list (of letters), which letters 
+	secret_word, is a  string, the word the user is guessing;
+	 assumes all letters are lowercase
+	  
+	letters_guessed, is list (of letters), which letters 
 	have been guessed so far;
 	  assumes that all letters are lowercase
-	returns: boolean, True if all the letters of 
-	secret_word are in letters_guessed;
-	  False otherwise
+	
 	'''
 	
 	for i in secret_word:
@@ -121,37 +116,7 @@ def get_available_letters(letters_guessed):
 
 def hangman(secret_word):
 
-	'''
-	secret_word: string, the secret word to guess.
 	
-	Starts up an interactive game of Hangman.
-	
-	* At the start of the game, let the user know how many 
-	  letters the secret_word contains and how many guesses
-	   s/he starts with.
-	  
-	* The user should start with 6 guesses
-
-	* Before each round, you should display to the user how 
-	many guesses
-	  s/he has left and the letters that the user has not yet 
-	  guessed.
-	
-	* Ask the user to supply one guess per round. Remember to 
-	make
-	  sure that the user puts in a letter!
-	
-	* The user should receive feedback immediately after each 
-	guess 
-	  about whether their guess appears in the computer's word.
-
-	* After each guess, you should display to the user the 
-	  partially guessed word so far.
-	
-	Follows the other limitations detailed in the problem
-	 write-up.
-	'''
-	# FILL IN YOUR CODE HERE AND DELETE "pass"
 	time.sleep(1)
 	print ("welcome to the game hangman!\n")
 	time.sleep(1)
@@ -205,10 +170,6 @@ def hangman(secret_word):
 
 
 if __name__ == "__main__":
-	# pass
 
-	# To test part 2, comment out the pass line above and
-	# uncomment the following two lines.
-	
 	secret_word = choose_word(wordlist)
 	hangman(secret_word)
